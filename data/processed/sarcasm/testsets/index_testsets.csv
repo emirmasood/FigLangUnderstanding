@@ -1,0 +1,5 @@
+test_setting,csv,n,label_counts,variety_counts,source_counts
+TEST_FULL,/content/drive/MyDrive/DNLP/data/processed/sarcasm/testsets/TEST_FULL.csv,612,"{0: 449, 1: 163}","{'en-AU': 241, 'en-IN': 230, 'en-UK': 141}",{'Reddit': 612}
+TEST_en-AU,/content/drive/MyDrive/DNLP/data/processed/sarcasm/testsets/TEST_en-au.csv,241,"{0: 140, 1: 101}",{'en-AU': 241},{'Reddit': 241}
+TEST_en-IN,/content/drive/MyDrive/DNLP/data/processed/sarcasm/testsets/TEST_en-in.csv,230,"{0: 199, 1: 31}",{'en-IN': 230},{'Reddit': 230}
+TEST_en-UK,/content/drive/MyDrive/DNLP/data/processed/sarcasm/testsets/TEST_en-uk.csv,141,"{0: 110, 1: 31}",{'en-UK': 141},{'Reddit': 141}

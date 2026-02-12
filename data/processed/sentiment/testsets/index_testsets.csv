@@ -1,0 +1,7 @@
+test_setting,csv,n,label_counts,variety_counts,source_counts
+TEST_FULL,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_FULL.csv,1212,"{0: 611, 1: 601}","{'en-IN': 455, 'en-UK': 386, 'en-AU': 371}","{'Reddit': 609, 'Google': 603}"
+TEST_Google,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_google.csv,603,"{1: 450, 0: 153}","{'en-UK': 248, 'en-IN': 225, 'en-AU': 130}",{'Google': 603}
+TEST_Reddit,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_reddit.csv,609,"{0: 458, 1: 151}","{'en-AU': 241, 'en-IN': 230, 'en-UK': 138}",{'Reddit': 609}
+TEST_en-AU,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_en-au.csv,371,"{0: 198, 1: 173}",{'en-AU': 371},"{'Reddit': 241, 'Google': 130}"
+TEST_en-IN,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_en-in.csv,455,"{0: 229, 1: 226}",{'en-IN': 455},"{'Reddit': 230, 'Google': 225}"
+TEST_en-UK,/content/drive/MyDrive/DNLP/data/processed/sentiment/testsets/TEST_en-uk.csv,386,"{1: 202, 0: 184}",{'en-UK': 386},"{'Google': 248, 'Reddit': 138}"
