@@ -1,6 +1,6 @@
 # Data Directory
 
-This directory contains all dataset files and derived artifacts used in the DNLP project on Figurative Language Understanding (BESSTIE-style).
+This directory contains all dataset files and derived artifacts used in the DNLP project on Figurative Language Understanding.
 
 The repository follows a separation between:
 - `raw/`: original provided data files (not edited)
