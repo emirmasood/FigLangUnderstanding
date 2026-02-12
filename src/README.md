@@ -1,93 +1,85 @@
 # Source Directory
 
-This directory contains the reusable Python modules used across all project notebooks. The project follows a hybrid workflow:
-- Notebooks orchestrate experiments (choose task/model/setting, call runners, export artifacts)
-- `src/` provides stable, reusable implementations for preprocessing, dataset loading, training/evaluation, metrics, plotting, and utilities
+This directory contains the reusable Python modules used across all notebooks in the DNLP project on Figurative Language Understanding (BESSTIE-style).
 
-The goal is to ensure that baselines and extensions:
-- use identical processed inputs and split/index definitions
-- compute metrics consistently
-- save predictions/metrics/plots in a standardized layout
-- remain reproducible across runs (fixed seeds and logged configs)
+The repository follows a hybrid workflow:
+- notebooks: orchestration (select model/task/setting, run experiments, export artifacts)
+- `src/`: shared implementations to keep baselines and extensions consistent
+- `data/processed/`: model-agnostic inputs consumed by all runners
 
-## Typical Responsibilities
+## Directory Structure
 
-### Data I/O and Schema
-Modules in this group handle reading raw/processed files and enforcing a canonical schema used by all models.
-Common functionality includes:
-- loading CSV/JSON (and optionally Excel/Parquet if used)
-- safe filename/path helpers
-- canonicalizing column names and value normalization (e.g., task/source/variety naming)
+### `src/io_utils.py` and schema utilities
+Utilities for safe file I/O and enforcing a canonical dataset schema.
+Typical responsibilities include:
+- loading CSV/JSON files used by the pipeline
+- safe naming/path helpers for consistent artifact naming
+- canonicalizing required columns and standardizing values (task/source/variety naming)
 
-Examples (names may vary by repo):
-- `io_utils.py` — `load_any`, `save_any`, safe path/name helpers
-- `schema.py` — `canonicalize()` to enforce required columns and consistent naming
+### `src/text_norm.py`
+Text normalization utilities used during preprocessing to produce model-agnostic inputs.
+Typical operations include:
+- whitespace cleanup and normalization
+- lightweight normalization rules that do not depend on a specific model tokenizer
+- generating a normalized column (e.g., `text_norm`) while preserving raw `text`
 
-### Text Normalization
-Text normalization is kept model-agnostic so the same processed CSVs work for RoBERTa/BERT/Mistral.
-Typical operations:
-- whitespace cleanup
-- URL/user mention normalization (if used)
-- lightweight punctuation normalization
-- optional lowercasing rules (while keeping raw text available)
+### `src/splits.py`
+Split and reproducibility helpers used in preprocessing.
+Typical responsibilities include:
+- stratified splitting utilities
+- saving split metadata (e.g., JSON indices) when needed
+- helpers used to build train/validation pools for different settings
 
-Examples:
-- `text_norm.py` — `normalize_text()`
-
-### Split and Index Utilities
-This group defines how train/validation splits are generated and how training/testing settings are indexed.
-Typical outputs:
-- per-task training settings index (e.g., `index_settings.csv`)
-- per-task test sets index (e.g., `index_testsets.csv`)
-- optional JSON split metadata for reproducibility
-
-Examples:
-- `splits.py` — stratified splitting helpers, JSON export utilities
-
-### Dataset Loaders
-Dataset loaders convert processed CSVs into the format expected by the training code.
-Typical functionality:
+### `src/data_loading/` (or dataset loader module)
+Dataset loading utilities that convert processed CSVs into the format required by model trainers.
+Typical responsibilities include:
 - reading train/val/test CSVs based on index files
-- tokenization and batching (for encoder models)
 - label mapping and sanity checks
+- tokenization/batching for encoder models (BERT/RoBERTa/XLM-R)
 
-Examples:
-- `dataset.py` or `data_loader.py`
+### `src/runners/` (or model runner modules)
+Standardized training and evaluation entry points used by the notebooks.
+Typical responsibilities include:
+- loading a training setting from `index_settings.csv`
+- training a model and saving checkpoints
+- evaluating on all required test sets from `index_testsets.csv`
+- exporting standardized artifacts (metrics, predictions, plots, analysis)
 
-### Model Training and Evaluation Runners
-Runners implement the standardized experiment loop used by notebooks:
-- load setting from index (train/val)
-- train model
-- evaluate on all required test sets
-- save artifacts in a consistent structure
-
-Typical outputs per run:
-- `metrics/*.csv`
-- `predictions/*.csv`
-- `plots/*.png`
-- `checkpoints/*`
-- `analysis/*.csv`
-
-Examples:
-- `run_roberta.py`, `run_bert.py`, `run_mistral.py`
-- or a single generic runner (e.g., `runner.py`) with model-specific wrappers
-
-### Metrics and Reporting
-Standardized computation across tasks and settings:
+### `src/metrics.py`
+Metric computation and aggregation used across all models and runs.
+Typical outputs include:
 - accuracy, macro F1, precision, recall
-- per-variety breakdowns
-- per-source breakdowns (when applicable)
-- pivoted tables for heatmaps and summary plots
+- per-variety breakdown tables
+- per-source/domain breakdown tables (when applicable)
+- pivot tables used for heatmaps and summary figures
 
-Examples:
-- `metrics.py` — metric computation and aggregation
-- `reporting.py` — writing tables in a consistent format
-
-### Plotting (Paper-style Figures)
-Plotting utilities produce the final figures in a consistent style across notebooks and models:
+### `src/plotting.py`
+Utilities for producing paper-style figures used in the final notebook cells.
+Typical figures include:
 - cross-variety matrix heatmaps (annotated cells)
-- grouped bar charts for cross-domain/in-domain comparisons
-- saved automatically to `plots/`
+- grouped bar charts for in-domain and cross-domain comparisons
+- consistent color palette and automatic export to `plots/`
 
-Examples:
-- `plotting.py` — functions to generate and export all “paper-style” figures
+### `src/utils.py` (optional)
+Small shared helpers used across modules and notebooks, such as:
+- seeding and determinism helpers
+- logging helpers
+- common constants (label names, variety/source mappings)
+
+## How the notebooks use `src/`
+All experiment notebooks follow the same pattern:
+1. Read processed indices for a task:
+   - `data/processed/<task>/index_settings.csv`
+   - `data/processed/<task>/testsets/index_testsets.csv`
+2. Call a runner from `src/` to train and evaluate under a selected setting
+3. Save standardized artifacts per run:
+   - `metrics/*.csv`, `predictions/*.csv`, `plots/*.png`, `checkpoints/*`, `analysis/*.csv`
+
+This structure ensures fair comparisons between baselines and extensions.
+
+## Reproducibility
+All experiments assume:
+- consistent usage of `data/processed/` across baselines and extensions
+- fixed seeds recorded in the notebooks/configs
+- training/test settings resolved via `index_settings.csv` and `index_testsets.csv`
+- standardized metrics and plotting functions shared through `src/`
