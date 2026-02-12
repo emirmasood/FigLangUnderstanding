@@ -1,6 +1,6 @@
 # Source Directory
 
-This directory contains the reusable Python modules used across all notebooks in the DNLP project on Figurative Language Understanding (BESSTIE-style).
+This directory contains the reusable Python modules used across all notebooks in the DNLP project on Figurative Language Understanding.
 
 The repository follows a hybrid workflow:
 - notebooks: orchestration (select model/task/setting, run experiments, export artifacts)
