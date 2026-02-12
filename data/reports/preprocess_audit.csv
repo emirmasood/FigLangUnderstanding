@@ -1,0 +1,10 @@
+task,setting,split_strategy,train_label_dist,val_label_dist
+sarcasm,FULL,label_variety,"{0: np.float64(0.7338912133891213), 1: np.float64(0.26610878661087867)}","{0: np.float64(0.7340782122905027), 1: np.float64(0.2659217877094972)}"
+sarcasm,TRAIN_en-AU,label,"{0: np.float64(0.5797306874557052), 1: np.float64(0.42026931254429484)}","{0: np.float64(0.5795454545454546), 1: np.float64(0.42045454545454547)}"
+sarcasm,TRAIN_en-IN,label,"{0: np.float64(0.8673091178650852), 1: np.float64(0.13269088213491476)}","{0: np.float64(0.8664688427299704), 1: np.float64(0.13353115727002968)}"
+sarcasm,TRAIN_en-UK,label,"{0: np.float64(0.7793939393939394), 1: np.float64(0.2206060606060606)}","{0: np.float64(0.7815533980582524), 1: np.float64(0.21844660194174756)}"
+sentiment,Google,label_variety,"{1: np.float64(0.7449702465287616), 0: np.float64(0.2550297534712383)}","{1: np.float64(0.7448979591836735), 0: np.float64(0.25510204081632654)}"
+sentiment,Reddit,label_variety,"{0: np.float64(0.7516835016835017), 1: np.float64(0.24831649831649832)}","{0: np.float64(0.7508417508417509), 1: np.float64(0.24915824915824916)}"
+sentiment,TRAIN_en-AU,label_source,"{0: np.float64(0.5357637286571296), 1: np.float64(0.4642362713428703)}","{0: np.float64(0.5350553505535055), 1: np.float64(0.46494464944649444)}"
+sentiment,TRAIN_en-IN,label_source,"{0: np.float64(0.5016872890888638), 1: np.float64(0.4983127109111361)}","{0: np.float64(0.5015015015015015), 1: np.float64(0.4984984984984985)}"
+sentiment,TRAIN_en-UK,label_source,"{1: np.float64(0.5219123505976095), 0: np.float64(0.47808764940239046)}","{1: np.float64(0.5221238938053098), 0: np.float64(0.4778761061946903)}"
