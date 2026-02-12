@@ -1,0 +1,2 @@
+task,train_setting,variant,test_setting,group,n,acc,macro_f1,precision,recall
+sentiment,Reddit,ce,TEST_en-UK,en-UK,386,0.8963730569948186,0.8941450706156588,0.8375,0.995049504950495

@@ -1,0 +1,2 @@
+task,train_setting,variant,test_setting,group,n,acc,macro_f1,precision,recall
+sentiment,TRAIN_en-UK,ce,TEST_en-UK,en-UK,386,0.9559585492227979,0.955851582736233,0.9556650246305419,0.9603960396039604

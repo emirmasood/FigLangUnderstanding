@@ -1,0 +1,24 @@
+text,label,pred,prob1,variety_name,source_name,train_setting,test_setting
+Went to ambani and Adanis vault .,1,0,0.0006144819199107587,en-IN,Reddit,FULL,TEST_FULL
+His condition after spending some quality time with police,1,0,0.000931859714910388,en-IN,Reddit,FULL,TEST_FULL
+Due to price fish and chips is now expensive.,1,0,0.0009534917771816254,en-UK,Reddit,FULL,TEST_FULL
+Not to worry. I'm sure Kjo will cast Jahnvi in another movie soon.,1,0,0.0009551456896588206,en-IN,Reddit,FULL,TEST_FULL
+"I think we can all come together and agree that, irrespective of political inclinations, race relations and religious divides, this is a problem all of us should be worried about. 
+I mean a love of ghosts unites everyone.",1,0,0.0011343801161274314,en-UK,Reddit,FULL,TEST_FULL
+This whole thread is disturbing.,1,0,0.0015450994251295924,en-AU,Reddit,FULL,TEST_FULL
+"So no more Covid jabs, hmmmm....
+They found a way for you to take it again 
+Sheeple will follow....",0,1,0.9977579712867737,en-UK,Reddit,FULL,TEST_FULL
+Due to price fish and chips is now expensive.,1,0,0.0028698903042823076,en-UK,Reddit,TRAIN_en-AU,TEST_FULL
+">The Gupta Brothers owned South African President, Jacob Zuma,
+What, like a slave?",0,1,0.9969122409820557,en-IN,Reddit,TRAIN_en-AU,TEST_FULL
+"So no more Covid jabs, hmmmm....
+They found a way for you to take it again 
+Sheeple will follow....",0,1,0.9968084692955017,en-UK,Reddit,TRAIN_en-UK,TEST_FULL
+Went to ambani and Adanis vault .,1,0,0.0034043658524751663,en-IN,Reddit,TRAIN_en-AU,TEST_FULL
+"If that's your best effort at asking a question, you don't have the skills to make it in Australia at the moment.
+Sorry. Used to be a pretty easy place to live, but it's brutal these days",1,0,0.003596779890358448,en-AU,Reddit,TRAIN_en-IN,TEST_FULL
+How insulated are they?  I'm over paper thin walls.,0,1,0.9963799118995667,en-AU,Reddit,FULL,TEST_FULL
+"Absolutely not, ""Searchers""/""Lads""/""Eshays"" have been wearing these brands since the late 80s.",0,1,0.9962602853775024,en-AU,Reddit,TRAIN_en-AU,TEST_FULL
+"The ALP have been playing games with energy policy since the Rudd years, they're just using it as a wedge for social democracy, the goal has always been to destabilise the LNP in wealthy inner-city seats. Listen to what they got away at the last election, they ""won the argument"" by convincing the gullible public that all you had to do was vote for one party over another in order to have more cheap green energy, at no cost to anyone (that includes taxpayers and consumers) and they did this without providing any real policy detail or proper costings. If anyone dared to question this false argument, they were labelled either a ""denier"" of climate change or were subject to ridicule for not understanding the benefits of renewable energy. 
+These arguments are extremely clever, at the end of the day, the ALP is a ruthless political machine, and Bowen and co and experienced and professional politicians. They skillfully framed the ""climate change"" debate as a political argument, and they won that argument comprehensively. Yet here we are, 2 years down the track and facing the prospect of blackouts, you can't make this stuff up.",1,0,0.004040137864649296,en-AU,Reddit,TRAIN_en-UK,TEST_FULL

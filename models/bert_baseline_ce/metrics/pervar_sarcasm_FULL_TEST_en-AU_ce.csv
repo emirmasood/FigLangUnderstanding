@@ -1,0 +1,2 @@
+task,train_setting,variant,test_setting,group,n,acc,macro_f1,precision,recall
+sarcasm,FULL,ce,TEST_en-AU,en-AU,241,0.6804979253112033,0.67546912435949,0.6090909090909091,0.6633663366336634

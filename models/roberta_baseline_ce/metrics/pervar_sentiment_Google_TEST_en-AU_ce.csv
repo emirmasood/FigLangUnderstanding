@@ -1,0 +1,2 @@
+task,train_setting,variant,test_setting,group,n,acc,macro_f1,precision,recall
+sentiment,Google,ce,TEST_en-AU,en-AU,371,0.8867924528301887,0.8859964881474978,0.8922155688622755,0.861271676300578

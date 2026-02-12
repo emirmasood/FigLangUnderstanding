@@ -214,7 +214,6 @@ data/processed/
 .ipynb_checkpoints/
 
 # Models
-models/
 *.bin
 *.pt
 
