@@ -1,4 +1,4 @@
-# Figurative Language Understanding Using Mixture-of-Adapters and Hyperbolic Tensor-of-Cues
+# Figurative Language Understanding via Mixture-of-Adapters and Variety-Aware Tensor-of-Cues
 
 ## Project overview
 This repository contains our end-to-end experimental pipeline for the Deep Natural Language Processing course project on Figurative Language Understanding, using a BESSTIE-style dataset. We replicate paper-aligned baselines with a standardized protocol and implement two extensions. All notebooks are designed to be runnable end-to-end and to export comparable artifacts (metrics, predictions, paper-style plots, and error analysis) so that baselines and extensions can be compared fairly.
